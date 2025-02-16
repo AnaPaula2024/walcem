@@ -177,6 +177,4 @@ import MeuComponente from "./components/MeuComponente";
 
 Bom trabalho!
 
-```
-
-```
+---
