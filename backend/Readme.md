@@ -69,13 +69,15 @@ Sinta-se à vontade para abrir issues ou pull requests para contribuir com melho
 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais informações..
 
-**🌟 Se você gostou, não se esqueça de dar uma estrela no repositório! Isso nos ajuda a alcançar mais entusiastas e colaboradores.**
----
-
 ## 📬 Contato
 
 Caso tenha alguma dúvida ou sugestão, sinta-se à vontade para abrir uma issue ou me contatar diretamente:
 
 - 📧 **E-mail (Senac):** ana.ppviana@senacsp.edu.br 
 - 📧 **E-mail (Hotmail):** ana.pereira.viana@hotmail.com  
-- 📧 **E-mail (Gmail):** paulinhapv22@gmail.com 
+- 📧 **E-mail (Gmail):** paulinhapv22@gmail.com
+
+
+**🌟 Se você gostou, não se esqueça de dar uma estrela no repositório! Isso nos ajuda a alcançar mais entusiastas e colaboradores.**
+
+---
