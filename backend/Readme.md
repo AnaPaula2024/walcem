@@ -1,123 +1,81 @@
-# Backend do Site de Reciclagem
+# 🚀 Backend do Site de Reciclagem de Eletrônicos
 
-Este repositório contém o backend para um site de reciclagem de eletrônicos. O backend é construído com Node.js, Express e MongoDB. Ele fornece APIs para gerenciar postos de coleta, postagens de blog, suporte, informações do site, FAQ, login e cadastro de usuários, etc.
+Este repositório contém o backend para um site de reciclagem de eletrônicos, desenvolvido com Node.js, Express e MongoDB. O sistema oferece APIs para gerenciar postos de coleta, postagens de blog, solicitações de suporte, informações do site, FAQ, além de funcionalidades de login e cadastro de usuários.
 
-## Estrutura do Projeto
+## 🔍 Objetivo do Projeto
 
-backend/
-│
-├── src/
-│ ├── controllers/
-│ │ ├── postosColetaController.js
-│ │ ├── blogController.js
-│ │ ├── supportController.js
-│ │ ├── infoController.js
-│ │ └── ...
-│ ├── models/
-│ │ ├── PostoColeta.js
-│ │ ├── Blog.js
-│ │ ├── Support.js
-│ │ ├── Info.js
-│ │ └── ...
-│ ├── routes/
-│ │ ├── postosColetaRoutes.js
-│ │ ├── blogRouter.js
-│ │ ├── supportRouter.js
-│ │ ├── infoRouter.js
-│ │ └── ...
-│ ├── services/
-│ │ ├── postosColetaService.js
-│ │ ├── blogService.js
-│ │ ├── supportService.js
-│ │ ├── infoService.js
-│ │ └── ...
-│ ├── middlewares/
-│ │ └── (middlewares.js)
-│ └── ...
-│
-├── app.js
-└── server.js
+O site de reciclagem de eletrônicos visa facilitar a conexão entre usuários que desejam descartar seus aparelhos eletrônicos de forma correta e empresas ou cooperativas responsáveis pela coleta e reciclagem. O sistema oferece funcionalidades como agendamento de coleta, mapa de postos de coleta, informações sobre os tipos de eletrônicos aceitos, notícias sobre reciclagem e um canal de suporte para dúvidas e sugestões.
+
+## Tecnologias Utilizadas
+
+*   **Node.js**
+*   **Express** 
+*   **MongoDB** 
+*   **Mongoose** 
+
+## Descrição das Pastas
+
+*   **controllers**: Contém os arquivos responsáveis por receber as requisições, interagir com os models e services, e enviar as respostas para o cliente.
+*   **models**: Define a estrutura dos dados (schemas) que serão armazenados no banco de dados MongoDB.
+*   **routes**: Define as rotas da API, ou seja, os endpoints que o cliente pode acessar.
+*   **services**: Contém a lógica de negócios da aplicação, separando-a dos controllers.
+*   **middlewares**: Contém funções que são executadas antes das requisições chegarem aos controllers, como autenticação e validação.
+
+## 💻 Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
+
+*   `MONGO_URI`: URL de conexão com o banco de dados MongoDB.
+*   `PORT`: Porta em que o servidor irá rodar.
+*   `(Outras variáveis necessárias)`
+
+## ⚙️ Instalação
+
+1.  Clone este repositório:
+
+    ```bash
+    git clone [https://github.com/usuario/repo.git](https://github.com/usuario/repo.git)
+    ```
+
+2.  Navegue até o diretório do projeto:
+
+    ```bash
+    cd backend
+    ```
+
+3.  Instale as dependências:
+
+    ```bash
+    npm install
+    ```
+
+## Executando o Servidor
+
+1.  Inicie o servidor MongoDB.
+2.  Execute o comando:
+
+    ```bash
+    node server.js
+    ```
+
+    O servidor estará rodando na porta especificada na variável de ambiente `PORT` (ou na porta 5000 por padrão).
 
 
-## Pré-requisitos
+## 👥 Contribuindo
 
-Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
-
-- [Node.js](https://nodejs.org/)
-- [MongoDB](https://www.mongodb.com/try/download/community) (ou um cluster do MongoDB Atlas)
-
-## Instalação
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/usuario/repo.git
-
-2. Navegue até o diretório do projeto:
-
-cd backend
-
-3. Instale as dependências:
-
-npm install
-
-4. Crie um arquivo .env na raiz do projeto com as variáveis de ambiente necessárias. Exemplo:
-
-MONGO_URI=mongodb://localhost:27017/nome-do-banco
-PORT=5000
-
-# Estrutura do Backend
-
-app.js
-Configura o Express, middlewares e rotas.
-
-Middlewares: Configura cors, bodyParser, e express.json().
-Rotas:
-/api/postos-coleta: Roteador para postos de coleta
-/api/blog: Roteador para postagens de blog
-/api/support: Roteador para suporte
-/api/info: Roteador para informações sobre o site
-server.js
-Este arquivo é responsável por conectar ao MongoDB e iniciar o servidor Express.
-
-Conexão com o MongoDB: Usa mongoose para conectar ao banco de dados.
-Inicialização do Servidor: Inicia o servidor Express na porta definida.
-
-# Rodando o Servidor
-
-Para iniciar o servidor, execute:
-
-node server.js
-
-O servidor estará rodando na porta especificada na variável de ambiente PORT (ou na porta 5000 por padrão).
-
-Rotas da API
-Postos de Coleta
-GET /api/postos-coleta - Lista todos os postos de coleta
-GET /api/postos-coleta/:id - Visualiza um posto de coleta específico
-POST /api/postos-coleta - Cria um novo posto de coleta
-PUT /api/postos-coleta/:id - Atualiza um posto de coleta existente
-DELETE /api/postos-coleta/:id - Exclui um posto de coleta
-Blog
-GET /api/blog - Lista todas as postagens do blog
-GET /api/blog/:id - Visualiza uma postagem do blog específica
-POST /api/blog - Cria uma nova postagem do blog
-PUT /api/blog/:id - Atualiza uma postagem do blog existente
-DELETE /api/blog/:id - Exclui uma postagem do blog
-Suporte
-GET /api/support - Lista todas as solicitações de suporte
-GET /api/support/:id - Visualiza uma solicitação de suporte específica
-POST /api/support - Envia uma nova solicitação de suporte
-PUT /api/support/:id - Atualiza uma solicitação de suporte existente
-DELETE /api/support/:id - Exclui uma solicitação de suporte
-Informações sobre o Site
-GET /api/info - Lista todas as informações
-GET /api/info/:id - Visualiza uma informação específica
-POST /api/info - Cria uma nova informação
-PUT /api/info/:id - Atualiza uma informação existente
-DELETE /api/info/:id - Exclui uma informação
-Contribuindo
 Sinta-se à vontade para abrir issues ou pull requests para contribuir com melhorias ou correções.
 
-Licença
-Este projeto está licenciado sob a MIT License.
+## 📝 Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais informações..
+
+**🌟 Se você gostou, não se esqueça de dar uma estrela no repositório! Isso nos ajuda a alcançar mais entusiastas e colaboradores.**
+---
+
+## 📬 Contato
+
+Caso tenha alguma dúvida ou sugestão, sinta-se à vontade para abrir uma issue ou me contatar diretamente:
+
+- 📧 **E-mail (Senac):** ana.ppviana@senacsp.edu.br 
+- 📧 **E-mail (Hotmail):** ana.pereira.viana@hotmail.com  
+- 📧 **E-mail (Gmail):** paulinhapv22@gmail.com 
